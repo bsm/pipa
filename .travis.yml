@@ -1,0 +1,7 @@
+language: go
+install: make deps
+script: make
+go:
+  - 1.5
+  - 1.4
+  - tip
