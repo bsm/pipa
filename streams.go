@@ -154,11 +154,12 @@ func (s *handlerProcess) loop(stopper, monitor *sync.WaitGroup) {
 	policy := s.handler.Policy()
 	for batch := range s.batches {
 		_ = policy.Perform(func() (err error) {
+			var out int
 			start := time.Now()
-			if _, err = s.handler.Process(batch); err != nil {
+			if out, err = s.handler.Process(batch); err != nil {
 				s.notifier.HandlerError(s.handler.Name(), len(batch), err)
 			} else {
-				s.notifier.HandlerOK(s.handler.Name(), len(batch), time.Since(start))
+				s.notifier.HandlerOK(s.handler.Name(), len(batch), out, time.Since(start))
 			}
 			return
 		})

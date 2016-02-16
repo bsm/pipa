@@ -8,7 +8,7 @@ type Notifier interface {
 	ConsumerError(error)
 	ParseError(error)
 	HandlerError(string, int, error)
-	HandlerOK(string, int, time.Duration)
+	HandlerOK(string, int, int, time.Duration)
 }
 
 // --------------------------------------------------------------------
@@ -34,14 +34,14 @@ func (m multiNotifier) ParseError(err error) {
 		i.ParseError(err)
 	}
 }
-func (m multiNotifier) HandlerError(name string, n int, err error) {
+func (m multiNotifier) HandlerError(name string, in int, err error) {
 	for _, i := range m {
-		i.HandlerError(name, n, err)
+		i.HandlerError(name, in, err)
 	}
 }
-func (m multiNotifier) HandlerOK(name string, n int, d time.Duration) {
+func (m multiNotifier) HandlerOK(name string, in, out int, d time.Duration) {
 	for _, i := range m {
-		i.HandlerOK(name, n, d)
+		i.HandlerOK(name, in, out, d)
 	}
 }
 
@@ -70,9 +70,9 @@ func (l *stdLogNotifier) ConsumerError(err error) {
 func (l *stdLogNotifier) ParseError(err error) {
 	l.Printf("parse error: %s", err.Error())
 }
-func (l *stdLogNotifier) HandlerError(name string, n int, err error) {
-	l.Printf("%s error on processing %d events: %s", name, n, err.Error())
+func (l *stdLogNotifier) HandlerError(name string, in int, err error) {
+	l.Printf("%s error on processing %d events: %s", name, in, err.Error())
 }
-func (l *stdLogNotifier) HandlerOK(name string, n int, d time.Duration) {
-	l.Printf("%s processed %d events in %v", name, n, d)
+func (l *stdLogNotifier) HandlerOK(name string, in, out int, d time.Duration) {
+	l.Printf("%s processed %d out of %d events in %v", name, out, in, d)
 }

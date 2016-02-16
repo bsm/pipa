@@ -78,7 +78,8 @@ var _ = Describe("Streams", func() {
 		Expect(b.events).To(Equal(8))
 		Expect(notifier.ParseErrors).To(Equal(0))
 		Expect(notifier.HandlerErrors).To(BeEmpty())
-		Expect(notifier.HandlerOKs).To(Equal(map[string]int{"A": 8, "B": 8}))
+		Expect(notifier.HandlerIn).To(Equal(map[string]int{"A": 8, "B": 8}))
+		Expect(notifier.HandlerOut).To(Equal(map[string]int{"A": 8, "B": 8}))
 	})
 
 })
