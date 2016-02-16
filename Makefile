@@ -4,7 +4,6 @@ test: vet errcheck unit
 
 deps:
 	go get -t ./...
-	go get github.com/kisielk/errcheck
 
 unit:
 	go test ./...

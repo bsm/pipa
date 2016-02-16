@@ -1,6 +1,6 @@
 language: go
 install: make deps
-script: make
+script: make unit
 go:
   - 1.5
   - 1.4
