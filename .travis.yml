@@ -1,7 +1,8 @@
 language: go
 install: make deps
-script: make unit
+script: make test
 go:
+  - 1.6
   - 1.5
   - 1.4
   - tip

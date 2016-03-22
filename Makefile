@@ -1,17 +1,17 @@
-default: unit
+SOURCES=$(shell find . -name '*.go')
 
-test: vet errcheck unit
+default: vet errcheck test
 
 deps:
 	go get -t ./...
 
-unit:
+test:
 	go test ./...
 
 vet:
-	go tool vet -composites=false ./...
+	go tool vet -composites=false $(SOURCES)
 
 errcheck:
-	errcheck ./...
+	errcheck -ignoretests -ignore 'Close' ./...
 
-.PHONY: test vet errcheck unit deps
+.PHONY: default test vet errcheck deps
