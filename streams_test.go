@@ -3,9 +3,9 @@ package pipa
 import (
 	"time"
 
-	"github.com/Shopify/sarama"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
+	"gopkg.in/Shopify/sarama.v1"
 )
 
 var _ = Describe("Streams", func() {

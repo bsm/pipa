@@ -1,6 +1,6 @@
 package pipa
 
-import "github.com/Shopify/sarama"
+import "gopkg.in/Shopify/sarama.v1"
 
 // Handler can process a batch of events
 type Handler interface {
