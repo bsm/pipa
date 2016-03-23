@@ -1,17 +1,18 @@
-SOURCES=$(shell find . -name '*.go')
+SOURCES:=$(shell find . -name '*.go' -not -path '*vendor/*')
+PACKAGES:=$(shell glide novendor)
 
 default: vet errcheck test
 
 deps:
-	go get -t ./...
+	glide install
 
 test:
-	go test ./...
+	go test $(PACKAGES)
 
 vet:
 	go tool vet -composites=false $(SOURCES)
 
 errcheck:
-	errcheck -ignoretests -ignore 'Close' ./...
+	errcheck -ignoretests -ignore 'Close' $(PACKAGES)
 
 .PHONY: default test vet errcheck deps

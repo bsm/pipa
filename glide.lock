@@ -1,0 +1,18 @@
+hash: 430b131a1a9210a2495eb9e5c2505202dd4311243810ae2e99ca570a9193fe81
+updated: 2016-03-23T08:22:11.02081911Z
+imports:
+- name: github.com/eapache/go-resiliency
+  version: b86b1ec0dd4209a588dc1285cdd471e73525c0b3
+  subpackages:
+  - breaker
+- name: github.com/eapache/queue
+  version: ded5959c0d4e360646dc9e9908cff48666781367
+- name: github.com/golang/snappy
+  version: 5f1c01d9f64b941dd9582c638279d046eda6ca31
+- name: github.com/klauspost/crc32
+  version: 19b0b332c9e4516a6370a0456e6182c3b5036720
+- name: gopkg.in/bsm/sarama-cluster.v2
+  version: eda8e588e73f40db91d20d438210da85b986fe47
+- name: gopkg.in/Shopify/sarama.v1
+  version: 4ba9bba6adb6697bcec3841e1ecdfecf5227c3b9
+devImports: []

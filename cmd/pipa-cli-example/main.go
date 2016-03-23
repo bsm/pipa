@@ -12,8 +12,8 @@ import (
 	"time"
 
 	"github.com/bsm/pipa"
-	"gopkg.in/bsm/sarama-cluster.v2"
 	"gopkg.in/Shopify/sarama.v1"
+	"gopkg.in/bsm/sarama-cluster.v2"
 )
 
 var (
