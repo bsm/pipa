@@ -1,5 +1,5 @@
 hash: 2bb7cc7eb945750d88144e129e776aa3a53f20836a0f223836a2b118efd9e18f
-updated: 2016-06-25T10:42:31.162840845+01:00
+updated: 2016-06-25T11:08:35.233719636+01:00
 imports:
 - name: github.com/bsm/sarama-cluster
   version: 3e840f2f0cd9479e4ce2ae953e41f5545f2bf56e
@@ -20,8 +20,14 @@ imports:
 - name: github.com/klauspost/crc32
   version: 19b0b332c9e4516a6370a0456e6182c3b5036720
 - name: github.com/Shopify/sarama
-  version: 88a4afb3d18f13212477a63a78e3a57ac87830a9
+  version: 38d579a708d2f87dd4e35342241048e361d1e66a
 testImports:
+- name: github.com/golang/protobuf
+  version: 0c1f6d65b5a189c2250d10e71a5506f06f9fa0a0
+  subpackages:
+  - proto
+  - proto/testdata
+  - ptypes/any
 - name: github.com/onsi/ginkgo
   version: 059cec02d342bab423425a99b191186a03255e9e
   subpackages:
@@ -35,10 +41,13 @@ testImports:
   - reporters
   - reporters/stenographer
   - types
-  - internal/containernode
+  - ginkgo/convert
+  - ginkgo/interrupthandler
+  - ginkgo/nodot
+  - ginkgo/testrunner
+  - ginkgo/testsuite
+  - ginkgo/watch
   - internal/leafnodes
-  - internal/spec
-  - internal/specrunner
 - name: github.com/onsi/gomega
   version: 0df7b7fdb38123c12a1f569f0affb2c2a7bd72cf
   subpackages:
@@ -48,7 +57,6 @@ testImports:
   - matchers
   - types
   - internal/oraclematcher
-  - format
   - matchers/support/goraph/bipartitegraph
   - matchers/support/goraph/edge
   - matchers/support/goraph/node
