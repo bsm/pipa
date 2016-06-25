@@ -1,8 +1,11 @@
 language: go
-install: make deps
-script: make test
+sudo: false
 go:
   - 1.6
   - 1.5
-  - 1.4
-  - tip
+install:
+  - go get -u github.com/Masterminds/glide
+  - glide install
+env:
+  - GO15VENDOREXPERIMENT=1
+

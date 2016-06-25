@@ -1,18 +1,57 @@
-hash: 430b131a1a9210a2495eb9e5c2505202dd4311243810ae2e99ca570a9193fe81
-updated: 2016-03-23T08:22:11.02081911Z
+hash: 2bb7cc7eb945750d88144e129e776aa3a53f20836a0f223836a2b118efd9e18f
+updated: 2016-06-25T10:42:31.162840845+01:00
 imports:
+- name: github.com/bsm/sarama-cluster
+  version: 3e840f2f0cd9479e4ce2ae953e41f5545f2bf56e
+- name: github.com/davecgh/go-spew
+  version: 5215b55f46b2b919f50a1df0eaa5886afe4e3b3d
+  subpackages:
+  - spew
 - name: github.com/eapache/go-resiliency
   version: b86b1ec0dd4209a588dc1285cdd471e73525c0b3
   subpackages:
   - breaker
+- name: github.com/eapache/go-xerial-snappy
+  version: bb955e01b9346ac19dc29eb16586c90ded99a98c
 - name: github.com/eapache/queue
   version: ded5959c0d4e360646dc9e9908cff48666781367
 - name: github.com/golang/snappy
   version: 5f1c01d9f64b941dd9582c638279d046eda6ca31
 - name: github.com/klauspost/crc32
   version: 19b0b332c9e4516a6370a0456e6182c3b5036720
-- name: gopkg.in/bsm/sarama-cluster.v2
-  version: eda8e588e73f40db91d20d438210da85b986fe47
-- name: gopkg.in/Shopify/sarama.v1
-  version: 4ba9bba6adb6697bcec3841e1ecdfecf5227c3b9
-devImports: []
+- name: github.com/Shopify/sarama
+  version: 88a4afb3d18f13212477a63a78e3a57ac87830a9
+testImports:
+- name: github.com/onsi/ginkgo
+  version: 059cec02d342bab423425a99b191186a03255e9e
+  subpackages:
+  - config
+  - internal/codelocation
+  - internal/failer
+  - internal/remote
+  - internal/suite
+  - internal/testingtproxy
+  - internal/writer
+  - reporters
+  - reporters/stenographer
+  - types
+  - internal/containernode
+  - internal/leafnodes
+  - internal/spec
+  - internal/specrunner
+- name: github.com/onsi/gomega
+  version: 0df7b7fdb38123c12a1f569f0affb2c2a7bd72cf
+  subpackages:
+  - internal/assertion
+  - internal/asyncassertion
+  - internal/testingtsupport
+  - matchers
+  - types
+  - internal/oraclematcher
+  - format
+  - matchers/support/goraph/bipartitegraph
+  - matchers/support/goraph/edge
+  - matchers/support/goraph/node
+  - matchers/support/goraph/util
+- name: gopkg.in/yaml.v2
+  version: a83829b6f1293c91addabc89d0571c246397bbf4

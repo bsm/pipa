@@ -11,9 +11,9 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/Shopify/sarama"
 	"github.com/bsm/pipa"
-	"gopkg.in/Shopify/sarama.v1"
-	"gopkg.in/bsm/sarama-cluster.v2"
+	"github.com/bsm/sarama-cluster"
 )
 
 var (

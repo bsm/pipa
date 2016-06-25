@@ -1,8 +1,8 @@
 package pipa
 
 import (
-	"gopkg.in/bsm/sarama-cluster.v2"
-	"gopkg.in/Shopify/sarama.v1"
+	"github.com/Shopify/sarama"
+	"github.com/bsm/sarama-cluster"
 )
 
 // Consumer interface
